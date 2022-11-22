@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-//import logo from './logo.svg';
 import CardList from './components/card-list/card-list.component';
 import SearchBox from './components/search-box/search-box.component';
 import './App.css';
@@ -38,17 +37,19 @@ const App = () => {
   return (
     <div className='App'>
       <h1 className='app-title'>{title}</h1>
-      <SearchBox
-        onChangeHandler={onSearchChange}
-        placeholder='Search Monsters'
-        className='monsters-search-box'
-      />
-      <br />
+
       <SearchBox
         onChangeHandler={onTitleChange}
         placeholder='set title'
         className='title-search-box'
       />
+      <br />
+      <SearchBox
+        onChangeHandler={onSearchChange}
+        placeholder='Search Monsters'
+        className='monsters-search-box'
+      />
+
       <CardList monsters={filteredMonsters} />
     </div>
   );
